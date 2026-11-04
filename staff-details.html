@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff Details - SAU Security Portal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #1f2937;
+        }
+
+       
+
+        nav {
+            height: 75px;
+            background: #0b1f3a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            color: white;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 30px;
+        }
+
+        .logo h2 {
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: #7dd3fc;
+        }
+
+        .login-btn {
+            background: #2563eb;
+            padding: 10px 20px;
+            border-radius: 6px;
+        }
+
+       
+
+        .container {
+            width: 86%;
+            margin: 40px auto;
+        }
+
+        .heading {
+            margin-bottom: 30px;
+        }
+
+        .heading h1 {
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .heading p {
+            color: #64748b;
+        }
+
+        
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .staff-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ddd;
+            border-top: 4px solid #2563eb;
+        }
+
+        .staff-icon {
+            width: 55px;
+            height: 55px;
+            background: #dbeafe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .staff-card h2 {
+            color: #0b1f3a;
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .guard-id {
+            color: #2563eb;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .staff-info p {
+            margin: 13px 0;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .staff-info b {
+            color: #1f2937;
+        }
+
+        .status {
+            color: green;
+            font-weight: bold;
+        }
+
+        .off-duty {
+            color: red;
+            font-weight: bold;
+        }
+
+        
+
+        .back-btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 35px;
+        }
+
+        .back-btn:hover {
+            background: #1d4ed8;
+        }
+
+       
+
+        footer {
+            background: #0b1f3a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        
+
+        @media (max-width: 900px) {
+            .staff-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                height: auto;
+                padding: 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: 92%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    
+
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">🛡️</div>
+            <h2>SAU SECURITY PORTAL</h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="homepage.html">About</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="homepage.html">Contact</a></li>
+            <li><a href="homepage.html" class="login-btn">Login</a></li>
+        </ul>
+    </nav>
+
+   
+
+    <div class="container">
+
+        <div class="heading">
+            <h1>Security Personnel Details</h1>
+            <p>Complete information about SAU security staff.</p>
+        </div>
+
+        <div class="staff-grid">
+
+           
+
+            <div class="staff-card">
+
+                <div class="staff-icon">👮</div>
+
+                <h2>Rajesh Kumar</h2>
+                <div class="guard-id">Guard ID: SAU001</div>
+
+                <div class="staff-info">
+                    <p><b>Contact:</b> 98XXXXXXXX</p>
+                    <p><b>Department:</b> Campus Security</p>
+                    <p><b>Shift:</b> Morning</p>
+                    <p><b>Duty Location:</b> Main Building</p>
+                    <p><b>Availability:</b> Available</p>
+                    <p><b>Status:</b> <span class="status">On Duty</span></p>
+                </div>
+
+            </div>
+
+            
+
+            <div class="staff-card">
+
+                <div class="staff-icon">👮</div>
+
+                <h2>Amit Sharma</h2>
+                <div class="guard-id">Guard ID: SAU002</div>
+
+                <div class="staff-info">
+                    <p><b>Contact:</b> 97XXXXXXXX</p>
+                    <p><b>Department:</b> Campus Security</p>
+                    <p><b>Shift:</b> Morning</p>
+                    <p><b>Duty Location:</b> Library</p>
+                    <p><b>Availability:</b> Available</p>
+                    <p><b>Status:</b> <span class="status">On Duty</span></p>
+                </div>
+
+            </div>
+
+            
+
+            <div class="staff-card">
+
+                <div class="staff-icon">👮</div>
+
+                <h2>Rahul Singh</h2>
+                <div class="guard-id">Guard ID: SAU003</div>
+
+                <div class="staff-info">
+                    <p><b>Contact:</b> 99XXXXXXXX</p>
+                    <p><b>Department:</b> Campus Security</p>
+                    <p><b>Shift:</b> Evening</p>
+                    <p><b>Duty Location:</b> Academic Block</p>
+                    <p><b>Availability:</b> Available</p>
+                    <p><b>Status:</b> <span class="off-duty">Off Duty</span></p>
+                </div>
+
+            </div>
+
+            
+
+            <div class="staff-card">
+
+                <div class="staff-icon">👮</div>
+
+                <h2>Vikram Yadav</h2>
+                <div class="guard-id">Guard ID: SAU004</div>
+
+                <div class="staff-info">
+                    <p><b>Contact:</b> 96XXXXXXXX</p>
+                    <p><b>Department:</b> Campus Security</p>
+                    <p><b>Shift:</b> Night</p>
+                    <p><b>Duty Location:</b> Hostel Block</p>
+                    <p><b>Availability:</b> On Leave</p>
+                    <p><b>Status:</b> <span class="off-duty">Off Duty</span></p>
+                </div>
+
+            </div>
+
+           
+
+            <div class="staff-card">
+
+                <div class="staff-icon">👮</div>
+
+                <h2>Manoj Verma</h2>
+                <div class="guard-id">Guard ID: SAU005</div>
+
+                <div class="staff-info">
+                    <p><b>Contact:</b> 95XXXXXXXX</p>
+                    <p><b>Department:</b> Campus Security</p>
+                    <p><b>Shift:</b> Evening</p>
+                    <p><b>Duty Location:</b> Main Gate</p>
+                    <p><b>Availability:</b> Available</p>
+                    <p><b>Status:</b> <span class="status">On Duty</span></p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <a href="staff.html" class="back-btn">← Back to Staff Directory</a>
+
+    </div>
+
+    
+
+    <footer>
+        <p>Copyright 2026 SAU Security Portal | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
