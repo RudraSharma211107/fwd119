@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Public View | SAU Security Portal</title>
+
+    <link rel="stylesheet" href="css/public.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🛡️ SAU SECURITY PORTAL
+            </div>
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <ul class="nav-links" id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#duty-board">Duty Board</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="personnel-login.html" class="login-btn">Login</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Public <span>Duty Board</span></h1>
+
+            <p>
+                Welcome to the SAU Security Public View.
+                Access general information about campus
+                security coverage and building-wise security services.
+            </p>
+
+            <a href="#duty-board" class="btn">
+                View Campus Coverage
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section class="section" id="about">
+
+        <h2>About Public View</h2>
+
+        <p class="section-description">
+
+            The Public Duty Board provides visitors and members
+            of South Asian University with general information
+            about campus security coverage.
+
+            It offers an organised overview of campus buildings
+            and their security coverage status without displaying
+            private personnel information.
+
+        </p>
+
+    </section>
+
+
+    <!-- CAMPUS OVERVIEW -->
+
+    <section class="overview">
+
+        <h2>Campus Security Overview</h2>
+
+        <p class="section-description">
+            A general overview of campus security coverage.
+        </p>
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🏢</div>
+
+                <h3 id="totalBuildings">--</h3>
+
+                <p>Campus Buildings</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🛡️</div>
+
+                <h3 id="coveredBuildings">--</h3>
+
+                <p>Buildings with Published Coverage</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">📅</div>
+
+                <h3 id="boardStatus">--</h3>
+
+                <p>Duty Board Status</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DUTY BOARD SECTION -->
+
+    <section class="section duty-section" id="duty-board">
+
+        <h2>Campus Security Coverage</h2>
+
+        <p class="section-description">
+            Search for a campus building to view its general
+            security coverage information.
+        </p>
+
+
+        <!-- SEARCH AND FILTER -->
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search building..."
+            >
+
+            <select id="coverageFilter">
+
+                <option value="all">All Buildings</option>
+
+                <option value="covered">Coverage Published</option>
+
+                <option value="unavailable">Not Published</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- BUILDING LIST -->
+
+        <div class="building-container" id="buildingContainer">
+
+            <!-- BUILDING 1 -->
+
+            <div class="building-card" data-status="covered">
+
+                <div class="building-header">
+
+                    <div>
+                        <h3>Academic Block</h3>
+                        <p>Campus Building</p>
+                    </div>
+
+                    <span class="status covered">
+                        Coverage Published
+                    </span>
+
+                </div>
+
+                <div class="building-details">
+
+                    <p>
+                        General security coverage information
+                        has been published for this building.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUILDING 2 -->
+
+            <div class="building-card" data-status="covered">
+
+                <div class="building-header">
+
+                    <div>
+                        <h3>Administrative Block</h3>
+                        <p>Campus Building</p>
+                    </div>
+
+                    <span class="status covered">
+                        Coverage Published
+                    </span>
+
+                </div>
+
+                <div class="building-details">
+
+                    <p>
+                        General security coverage information
+                        has been published for this building.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUILDING 3 -->
+
+            <div class="building-card" data-status="unavailable">
+
+                <div class="building-header">
+
+                    <div>
+                        <h3>Library Block</h3>
+                        <p>Campus Building</p>
+                    </div>
+
+                    <span class="status unavailable">
+                        Not Published
+                    </span>
+
+                </div>
+
+                <div class="building-details">
+
+                    <p>
+                        No public coverage information has
+                        been published for this building.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUILDING 4 -->
+
+            <div class="building-card" data-status="covered">
+
+                <div class="building-header">
+
+                    <div>
+                        <h3>Hostel Block</h3>
+                        <p>Campus Building</p>
+                    </div>
+
+                    <span class="status covered">
+                        Coverage Published
+                    </span>
+
+                </div>
+
+                <div class="building-details">
+
+                    <p>
+                        General security coverage information
+                        has been published for this building.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p class="no-results" id="noResults">
+            No buildings found.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+
+    <section class="section contact-section" id="contact">
+
+        <h2>Need Assistance?</h2>
+
+        <p class="section-description">
+
+            For assistance or general security-related enquiries,
+            please contact the university security administration.
+
+        </p>
+
+        <p><strong>South Asian University</strong></p>
+
+        <p>Security Administration Office</p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>🛡️ SAU SECURITY PORTAL</h3>
+
+        <p>
+            Simplifying security management through technology.
+        </p>
+
+        <p class="copyright">
+            &copy; 2026 SAU Security Portal. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/public.js"></script>
+
+</body>
+</html>

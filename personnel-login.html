@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personnel Login | SAU Security Portal</title>
+
+    <link rel="stylesheet" href="css/personnel-login.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🛡️ SAU SECURITY PORTAL
+            </div>
+
+            <a href="index.html" class="home-link">Back to Home</a>
+
+        </nav>
+    </header>
+
+
+    <!-- LOGIN SECTION -->
+
+    <section class="login-section">
+
+        <!-- LEFT INFORMATION PANEL -->
+
+        <div class="login-info">
+
+            <div class="shield">🛡️</div>
+
+            <h1>Personnel <span>Login</span></h1>
+
+            <p>
+                Welcome to the SAU Security Portal.
+                Access your personal dashboard to view your
+                attendance, duty assignments and work schedule.
+            </p>
+
+            <div class="info-points">
+
+                <p>✓ View your duty assignments</p>
+
+                <p>✓ Check your attendance records</p>
+
+                <p>✓ Manage your leave applications</p>
+
+                <p>✓ Access your duty schedule</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGIN FORM -->
+
+        <div class="login-card">
+
+            <div class="card-icon">🔐</div>
+
+            <h2>Welcome Back</h2>
+
+            <p class="card-description">
+                Sign in to access your personnel dashboard.
+            </p>
+
+
+            <form id="loginForm">
+
+                <!-- PERSONNEL ID -->
+
+                <div class="form-group">
+
+                    <label for="personnelId">Personnel ID</label>
+
+                    <input
+                        type="text"
+                        id="personnelId"
+                        placeholder="Enter your Personnel ID"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">Password</label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="show-password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REMEMBER ME AND FORGOT PASSWORD -->
+
+                <div class="form-options">
+
+                    <label class="remember">
+                        <input type="checkbox" id="rememberMe">
+                        Remember me
+                    </label>
+
+                    <button
+                        type="button"
+                        id="forgotPassword"
+                        class="forgot-link"
+                    >
+                        Forgot Password?
+                    </button>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <a href="personnel-dashboard.html" class="login-btn">Login</a>
+
+
+                <!-- MESSAGE -->
+
+                <p id="message" class="message"></p>
+
+            </form>
+
+
+            <div class="login-footer">
+
+                <p>
+                    Only registered security personnel can access
+                    this portal.
+                </p>
+
+                <a href="index.html">Return to Homepage</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>🛡️ SAU SECURITY PORTAL</h3>
+
+        <p>
+            Simplifying security management through technology.
+        </p>
+
+        <p class="copyright">
+            &copy; 2026 SAU Security Portal. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/personnel-login.js"></script>
+
+</body>
+</html>

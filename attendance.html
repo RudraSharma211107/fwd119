@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/attendance.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <span class="shield">🛡️</span>
+            <div>
+                <h2>SAU SECURITY PORTAL</h2>
+                <p>Administrator Panel</p>
+            </div>
+        </div>
+        <a href="index.html" class="logout-btn" id="logoutBtn">Logout</a>
+    </header>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar" id="sidebar">
+            <h3>ADMIN MENU</h3>
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="admin-staff.html">Staff Management</a>
+            <a href="admin-attendance.html" class="active">Attendance Management</a>
+            <a href="admin-assignments.html">Duty Assignments</a>
+            <a href="admin-schedule.html">Schedule Management</a>
+            <a href="admin-leaves.html">Leave Applications</a>
+            <a href="admin-notices.html">Notices</a>
+            <a href="admin-reports.html">Reports</a>
+            <a href="admin-profile.html">Admin Profile</a>
+            <a href="index.html" id="sidebarLogout">Logout</a>
+        </aside>
+
+        <main class="main-content">
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <div class="page-heading">
+                <h1>Attendance Management</h1>
+                <p>View, mark and manage security personnel attendance.</p>
+            </div>
+
+            <div class="demo-notice">
+                <strong>Demo Mode:</strong> These are sample attendance records.
+                Changes are stored only in this browser until backend integration.
+            </div>
+
+            <section class="summary-cards">
+                <div class="summary-card">
+                    <p>Present</p>
+                    <h2 id="presentCount">0</h2>
+                </div>
+                <div class="summary-card">
+                    <p>Absent</p>
+                    <h2 id="absentCount">0</h2>
+                </div>
+                <div class="summary-card">
+                    <p>Late</p>
+                    <h2 id="lateCount">0</h2>
+                </div>
+                <div class="summary-card">
+                    <p>On Leave</p>
+                    <h2 id="leaveCount">0</h2>
+                </div>
+            </section>
+
+            <section class="attendance-section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Attendance Records</h2>
+                        <p>Search and filter personnel attendance.</p>
+                    </div>
+                    <button class="primary-btn" id="addRecordBtn">+ Mark Attendance</button>
+                </div>
+
+                <div class="filters">
+                    <input type="text" id="searchInput"
+                           placeholder="Search by name or personnel ID">
+
+                    <input type="date" id="dateFilter">
+
+                    <select id="statusFilter">
+                        <option value="All">All Statuses</option>
+                        <option value="Present">Present</option>
+                        <option value="Absent">Absent</option>
+                        <option value="Late">Late</option>
+                        <option value="On Leave">On Leave</option>
+                        <option value="Not Marked">Not Marked</option>
+                    </select>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Personnel ID</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Check-in</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attendanceTable">
+                            <!-- Records are added through JavaScript -->
+                        </tbody>
+                    </table>
+                    <p id="emptyMessage" class="empty-message" hidden>
+                        No attendance records found.
+                    </p>
+                </div>
+            </section>
+
+            <section class="form-section" id="attendanceFormSection">
+                <h2 id="formHeading">Mark Attendance</h2>
+                <p>Add a new attendance record or edit an existing one.</p>
+
+                <form id="attendanceForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="personnelId">Personnel ID</label>
+                            <input type="text" id="personnelId"
+                                   placeholder="e.g. SAU101" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="personnelName">Personnel Name</label>
+                            <input type="text" id="personnelName"
+                                   placeholder="Enter full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="attendanceDate">Date</label>
+                            <input type="date" id="attendanceDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkIn">Check-in Time</label>
+                            <input type="time" id="checkIn">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="attendanceStatus">Attendance Status</label>
+                            <select id="attendanceStatus" required>
+                                <option value="Present">Present</option>
+                                <option value="Absent">Absent</option>
+                                <option value="Late">Late</option>
+                                <option value="On Leave">On Leave</option>
+                                <option value="Not Marked">Not Marked</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="primary-btn" id="saveBtn">
+                            Save Attendance
+                        </button>
+                        <button type="button" class="secondary-btn" id="cancelBtn">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <footer>
+                <p>© 2026 SAU Security Portal | Admin Panel</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/attendance.js"></script>
+</body>
+</html>

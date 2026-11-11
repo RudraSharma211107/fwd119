@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/staff.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <span class="shield">🛡️</span>
+            <div>
+                <h2>SAU SECURITY PORTAL</h2>
+                <p>Administrator Panel</p>
+            </div>
+        </div>
+        <a href="index.html" class="logout-btn" id="logoutBtn">Logout</a>
+    </header>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar" id="sidebar">
+            <h3>ADMIN MENU</h3>
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="staff.html" class="active">Staff Management</a>
+            <a href="attendance.html">Attendance Management</a>
+            <a href="admin-assignments.html">Duty Assignments</a>
+            <a href="admin-schedule.html">Schedule Management</a>
+            <a href="admin-leaves.html">Leave Applications</a>
+            <a href="admin-notices.html">Notices</a>
+            <a href="admin-reports.html">Reports</a>
+            <a href="admin-profile.html">Admin Profile</a>
+            <a href="index.html" id="sidebarLogout">Logout</a>
+        </aside>
+
+        <main class="main-content">
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <div class="page-heading">
+                <h1>Staff Management</h1>
+                <p>Add, view and manage security personnel records.</p>
+            </div>
+
+            <div class="demo-notice">
+                <strong>Demo Mode:</strong> The records shown are fictional sample data.
+                Changes are stored in this browser only until backend integration.
+            </div>
+
+            <!-- Summary Cards -->
+            <section class="summary-cards">
+
+                <div class="summary-card">
+                    <p>Total Staff</p>
+                    <h2 id="totalStaff">0</h2>
+                </div>
+
+                <div class="summary-card">
+                    <p>Active Staff</p>
+                    <h2 id="activeStaff">0</h2>
+                </div>
+
+                <div class="summary-card">
+                    <p>Inactive Staff</p>
+                    <h2 id="inactiveStaff">0</h2>
+                </div>
+
+            </section>
+
+            <!-- Staff Directory -->
+            <section class="staff-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Security Staff Directory</h2>
+                        <p>View and manage personnel information.</p>
+                    </div>
+
+                    <button class="primary-btn" id="addStaffBtn">
+                        + Add Personnel
+                    </button>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="filters">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search by name or Personnel ID"
+                    >
+
+                    <select id="designationFilter">
+                        <option value="All">All Designations</option>
+                        <option value="Security Officer">Security Officer</option>
+                        <option value="Security Guard">Security Guard</option>
+                        <option value="Supervisor">Supervisor</option>
+                    </select>
+
+                    <select id="statusFilter">
+                        <option value="All">All Accounts</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+
+                </div>
+
+                <!-- Staff Table -->
+                <div class="table-container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Personnel ID</th>
+                                <th>Name</th>
+                                <th>Designation</th>
+                                <th>Department</th>
+                                <th>Contact</th>
+                                <th>Account Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="staffTable">
+                            <!-- Staff records appear here -->
+                        </tbody>
+                    </table>
+
+                    <p id="emptyMessage" class="empty-message" hidden>
+                        No personnel records found.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- Add / Edit Staff Form -->
+            <section class="form-section" id="staffFormSection">
+
+                <h2 id="formHeading">Add New Personnel</h2>
+                <p>Enter the security personnel details below.</p>
+
+                <form id="staffForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="personnelId">Personnel ID</label>
+                            <input
+                                type="text"
+                                id="personnelId"
+                                placeholder="e.g. SAU105"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="personnelName">Full Name</label>
+                            <input
+                                type="text"
+                                id="personnelName"
+                                placeholder="Enter full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="designation">Designation</label>
+                            <select id="designation" required>
+                                <option value="">Select Designation</option>
+                                <option value="Security Officer">Security Officer</option>
+                                <option value="Security Guard">Security Guard</option>
+                                <option value="Supervisor">Supervisor</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <input
+                                type="text"
+                                id="department"
+                                placeholder="Enter department"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Contact Number</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter contact number"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter email address"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="shift">Assigned Shift</label>
+                            <select id="shift" required>
+                                <option value="">Select Shift</option>
+                                <option value="Morning">Morning</option>
+                                <option value="Evening">Evening</option>
+                                <option value="Night">Night</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="accountStatus">Account Status</label>
+                            <select id="accountStatus" required>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="primary-btn" id="saveBtn">
+                            Add Personnel
+                        </button>
+
+                        <button type="button" class="secondary-btn" id="cancelBtn">
+                            Cancel
+                        </button>
+                    </div>
+
+                </form>
+
+            </section>
+
+            <footer>
+                <p>© 2026 SAU Security Portal | Admin Panel</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="js/staff.js"></script>
+</body>
+</html>

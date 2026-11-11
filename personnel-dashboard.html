@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personnel Dashboard | SAU Security Portal</title>
+
+    <link rel="stylesheet" href="css/personnel-dashboard.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            🛡️ SAU SECURITY PORTAL
+        </div>
+
+        <div class="header-right">
+            <span class="personnel-label">Personnel Portal</span>
+            <a href="index.html" class="logout-btn" id="logoutBtn">Logout</a>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN LAYOUT -->
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <h3>MENU</h3>
+
+            <a href="personnel-dashboard.html" class="active">Dashboard</a>
+
+            <a href="personnel-attendance.html">My Attendance</a>
+
+            <a href="duty-assignment.html">Duty Assignment</a>
+
+            <a href="my-schedule.html">My Schedule</a>
+
+            <a href="my-profile.html">My Profile</a>
+
+            <a href="apply-leave.html">Apply for Leave</a>
+
+            <a href="notices.html">Notices</a>
+
+            <a href="contact-admin.html">Contact Supervisor/Admin</a>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <div class="page-heading">
+                <h1>Personnel Dashboard</h1>
+
+                <p>
+                    View your attendance, current duty and
+                    other personnel information.
+                </p>
+            </div>
+
+
+            <!-- OVERVIEW CARDS -->
+
+            <section class="overview">
+
+                <div class="summary-card">
+                    <div class="card-icon">📋</div>
+                    <h3>Today's Attendance</h3>
+                    <h2 id="attendanceStatus">--</h2>
+                    <p>Current attendance status</p>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="card-icon">📍</div>
+                    <h3>Current Duty</h3>
+                    <h2 id="currentDuty">--</h2>
+                    <p>Assigned building and floor</p>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="card-icon">🕒</div>
+                    <h3>Shift Timing</h3>
+                    <h2 id="shiftTiming">--</h2>
+                    <p>Your assigned shift</p>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="card-icon">📅</div>
+                    <h3>Next Duty</h3>
+                    <h2 id="nextDuty">--</h2>
+                    <p>Your upcoming assignment</p>
+                </div>
+
+            </section>
+
+
+            <!-- QUICK ACCESS -->
+
+            <section class="quick-access">
+
+                <h2>Personnel Services</h2>
+
+                <p class="section-description">
+                    Access different services available in the portal.
+                </p>
+
+
+                <div class="service-grid">
+
+                    <a href="personnel-attendance.html" class="service-card">
+                        <div class="service-icon">📋</div>
+                        <h3>My Attendance</h3>
+                        <p>View your daily and monthly attendance records.</p>
+                        <span>View Attendance →</span>
+                    </a>
+
+
+                    <a href="duty-assignment.html" class="service-card">
+                        <div class="service-icon">📍</div>
+                        <h3>Duty Assignment</h3>
+                        <p>Check your assigned building, floor and shift.</p>
+                        <span>View Assignment →</span>
+                    </a>
+
+
+                    <a href="my-schedule.html" class="service-card">
+                        <div class="service-icon">📅</div>
+                        <h3>My Schedule</h3>
+                        <p>View your weekly and monthly duty schedule.</p>
+                        <span>View Schedule →</span>
+                    </a>
+
+
+                    <a href="my-profile.html" class="service-card">
+                        <div class="service-icon">👤</div>
+                        <h3>My Profile</h3>
+                        <p>View your personal and employment details.</p>
+                        <span>View Profile →</span>
+                    </a>
+
+
+                    <a href="apply-leave.html" class="service-card">
+                        <div class="service-icon">📝</div>
+                        <h3>Apply for Leave</h3>
+                        <p>Submit a leave application and check its status.</p>
+                        <span>Apply Now →</span>
+                    </a>
+
+
+                    <a href="notices.html" class="service-card">
+                        <div class="service-icon">📢</div>
+                        <h3>Notices</h3>
+                        <p>Read important announcements and instructions.</p>
+                        <span>View Notices →</span>
+                    </a>
+
+
+                    <a href="contact-admin.html" class="service-card">
+                        <div class="service-icon">☎️</div>
+                        <h3>Contact Supervisor/Admin</h3>
+                        <p>Find official contact information for assistance.</p>
+                        <span>View Contacts →</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- INFORMATION NOTE -->
+
+            <section class="information-box">
+
+                <h3>Important Information</h3>
+
+                <p>
+                    Please check your duty assignment and schedule
+                    regularly. For corrections in your profile or
+                    attendance records, contact the Security
+                    Administrator.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>© 2026 SAU Security Portal. All Rights Reserved.</p>
+    </footer>
+
+
+    <script src="js/personnel-dashboard.js"></script>
+
+</body>
+</html>

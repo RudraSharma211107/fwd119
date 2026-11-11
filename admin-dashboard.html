@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | SAU Security Portal</title>
+
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+
+<body>
+
+   
+
+    <header class="header">
+
+        <div class="logo">
+            🛡️ SAU SECURITY PORTAL
+        </div>
+
+        <div class="header-right">
+
+            <span class="admin-label">Administrator</span>
+
+            <a href="index.html" class="logout-btn" id="logoutBtn">
+                Logout
+            </a>
+
+        </div>
+
+    </header>
+
+
+    
+
+    <div class="dashboard-layout">
+
+
+       
+
+        <aside class="sidebar" id="sidebar">
+
+            <h3>ADMIN MENU</h3>
+
+            <a href="admin-dashboard.html" class="active">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="staff.html">
+                <span>👥</span> Staff Management
+            </a>
+
+            <a href="attendance.html">
+                <span>📋</span> Attendance Management
+            </a>
+
+            <a href="assignments.html">
+                <span>📍</span> Duty Assignments
+            </a>
+
+            <a href="admin-schedule.html">
+                <span>📅</span> Schedule Management
+            </a>
+
+            <a href="admin-leaves.html">
+                <span>📝</span> Leave Applications
+            </a>
+
+            <a href="admin-notices.html">
+                <span>📢</span> Notices
+            </a>
+
+            <a href="admin-reports.html">
+                <span>📊</span> Reports
+            </a>
+
+            <a href="admin-profile.html">
+                <span>👤</span> Admin Profile
+            </a>
+
+            <a href="index.html" class="sidebar-logout" id="sidebarLogout">
+                <span>↪</span> Logout
+            </a>
+
+        </aside>
+
+
+        
+
+        <main class="main-content">
+
+
+           
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+
+         
+
+            <section class="page-heading">
+
+                <h1>Admin Dashboard</h1>
+
+                <p>
+                    Manage security personnel and monitor
+                    campus security operations.
+                </p>
+
+            </section>
+
+
+
+            <section class="overview">
+
+                <div class="summary-card">
+
+                    <div class="card-icon">👥</div>
+
+                    <h3>Total Staff</h3>
+
+                    <h2 id="totalStaff">--</h2>
+
+                    <p>Registered security personnel</p>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="card-icon">📋</div>
+
+                    <h3>Present Today</h3>
+
+                    <h2 id="presentToday">--</h2>
+
+                    <p>Today's attendance count</p>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="card-icon">📝</div>
+
+                    <h3>Pending Leaves</h3>
+
+                    <h2 id="pendingLeaves">--</h2>
+
+                    <p>Applications awaiting approval</p>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="card-icon">📍</div>
+
+                    <h3>Active Duty Posts</h3>
+
+                    <h2 id="activePosts">--</h2>
+
+                    <p>Currently assigned duty posts</p>
+
+                </div>
+
+            </section>
+
+
+           
+
+            <section class="quick-section">
+
+                <h2>Quick Actions</h2>
+
+                <p class="section-description">
+                    Quickly access important administration tasks.
+                </p>
+
+
+                <div class="quick-grid">
+
+
+                    <a href="staff.html" class="quick-card">
+
+                        <div class="quick-icon">➕</div>
+
+                        <h3>Add Personnel</h3>
+
+                        <p>
+                            Register a new security staff member.
+                        </p>
+
+                        <span>Get Started →</span>
+
+                    </a>
+
+
+                    <a href="attendance.html" class="quick-card">
+
+                        <div class="quick-icon">📋</div>
+
+                        <h3>Mark Attendance</h3>
+
+                        <p>
+                            Record and manage staff attendance.
+                        </p>
+
+                        <span>Get Started →</span>
+
+                    </a>
+
+
+                    <a href="assignments.html" class="quick-card">
+
+                        <div class="quick-icon">📍</div>
+
+                        <h3>Assign Duty</h3>
+
+                        <p>
+                            Assign personnel to buildings and shifts.
+                        </p>
+
+                        <span>Get Started →</span>
+
+                    </a>
+
+
+                    <a href="admin-notices.html" class="quick-card">
+
+                        <div class="quick-icon">📢</div>
+
+                        <h3>Publish Notice</h3>
+
+                        <p>
+                            Create and publish important announcements.
+                        </p>
+
+                        <span>Get Started →</span>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+           
+
+            <section class="activity-section">
+
+                <div class="activity-heading">
+
+                    <div>
+                        <h2>Recent Activity</h2>
+
+                        <p class="section-description">
+                            Latest administrative actions.
+                        </p>
+                    </div>
+
+                    <a href="admin-reports.html" class="view-all">
+                        View Reports →
+                    </a>
+
+                </div>
+
+
+                <div class="activity-table">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Activity</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="activityTable">
+
+                            <tr>
+                                <td colspan="3" class="empty-message">
+                                    No activity records available yet.
+                                    Activity history will appear here
+                                    after database integration.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+          
+
+            <section class="information-box">
+
+                <h3>Administration Information</h3>
+
+                <p>
+                    Use the administration panel to manage personnel,
+                    monitor attendance, assign duties and review leave
+                    applications. Make sure all records are updated
+                    accurately.
+                </p>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <footer>
+
+        <p>
+            © 2026 SAU Security Portal. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/admin-dashboard.js"></script>
+
+</body>
+</html>

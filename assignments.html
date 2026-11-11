@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duty Assignments | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/assignments.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <span class="shield">🛡️</span>
+            <div>
+                <h2>SAU SECURITY PORTAL</h2>
+                <p>Administrator Panel</p>
+            </div>
+        </div>
+        <a href="index.html" class="logout-btn" id="logoutBtn">Logout</a>
+    </header>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar" id="sidebar">
+            <h3>ADMIN MENU</h3>
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="staff.html">Staff Management</a>
+            <a href="attendance.html">Attendance Management</a>
+            <a href="assignments.html" class="active">Duty Assignments</a>
+            <a href="admin-schedule.html">Schedule Management</a>
+            <a href="admin-leaves.html">Leave Applications</a>
+            <a href="admin-notices.html">Notices</a>
+            <a href="admin-reports.html">Reports</a>
+            <a href="admin-profile.html">Admin Profile</a>
+            <a href="index.html" id="sidebarLogout">Logout</a>
+        </aside>
+
+        <main class="main-content">
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <div class="page-heading">
+                <h1>Duty Assignments</h1>
+                <p>Assign security personnel to buildings, floors and shifts.</p>
+            </div>
+
+            <div class="demo-notice">
+                <strong>Demo Mode:</strong> These are sample assignments.
+                Changes are stored in this browser only until backend integration.
+            </div>
+
+            <!-- Summary Cards -->
+            <section class="summary-cards">
+
+                <div class="summary-card">
+                    <p>Total Assignments</p>
+                    <h2 id="totalAssignments">0</h2>
+                </div>
+
+                <div class="summary-card">
+                    <p>Active Assignments</p>
+                    <h2 id="activeAssignments">0</h2>
+                </div>
+
+                <div class="summary-card">
+                    <p>Cancelled Assignments</p>
+                    <h2 id="cancelledAssignments">0</h2>
+                </div>
+
+            </section>
+
+            <!-- Assignment Directory -->
+            <section class="assignment-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Assignment Directory</h2>
+                        <p>View and manage security duty assignments.</p>
+                    </div>
+
+                    <button class="primary-btn" id="addAssignmentBtn">
+                        + Assign Duty
+                    </button>
+                </div>
+
+                <div class="filters">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search by personnel name or ID"
+                    >
+
+                    <input type="date" id="dateFilter">
+
+                    <select id="statusFilter">
+                        <option value="All">All Statuses</option>
+                        <option value="Active">Active</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Personnel ID</th>
+                                <th>Name</th>
+                                <th>Building</th>
+                                <th>Floor / Department</th>
+                                <th>Shift</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="assignmentTable">
+                            <!-- Assignments added by JavaScript -->
+                        </tbody>
+                    </table>
+
+                    <p id="emptyMessage" class="empty-message" hidden>
+                        No assignments found.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- Add / Edit Assignment Form -->
+            <section class="form-section" id="assignmentFormSection">
+
+                <h2 id="formHeading">Create New Assignment</h2>
+                <p>Enter the details of the duty assignment.</p>
+
+                <form id="assignmentForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="personnelId">Personnel ID</label>
+                            <input
+                                type="text"
+                                id="personnelId"
+                                placeholder="e.g. SAU101"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="personnelName">Personnel Name</label>
+                            <input
+                                type="text"
+                                id="personnelName"
+                                placeholder="Enter personnel name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="building">Building / Block</label>
+                            <select id="building" required>
+                                <option value="">Select Building</option>
+                                <option value="Academic Block">Academic Block</option>
+                                <option value="Administrative Block">Administrative Block</option>
+                                <option value="Library Block">Library Block</option>
+                                <option value="Hostel Block">Hostel Block</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="floor">Floor / Department</label>
+                            <input
+                                type="text"
+                                id="floor"
+                                placeholder="e.g. Ground Floor"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="shift">Shift</label>
+                            <select id="shift" required>
+                                <option value="">Select Shift</option>
+                                <option value="Morning">Morning</option>
+                                <option value="Evening">Evening</option>
+                                <option value="Night">Night</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dutyDate">Duty Date</label>
+                            <input type="date" id="dutyDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportingTime">Reporting Time</label>
+                            <input type="time" id="reportingTime" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="supervisor">Supervisor Name</label>
+                            <input
+                                type="text"
+                                id="supervisor"
+                                placeholder="Enter supervisor name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assignmentStatus">Assignment Status</label>
+                            <select id="assignmentStatus" required>
+                                <option value="Active">Active</option>
+                                <option value="Cancelled">Cancelled</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="primary-btn" id="saveBtn">
+                            Save Assignment
+                        </button>
+
+                        <button type="button" class="secondary-btn" id="cancelBtn">
+                            Cancel
+                        </button>
+                    </div>
+
+                </form>
+
+            </section>
+
+            <footer>
+                <p>© 2026 SAU Security Portal | Admin Panel</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="js/assignments.js"></script>
+</body>
+</html>

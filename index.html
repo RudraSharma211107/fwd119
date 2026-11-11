@@ -1,490 +1,47 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>SAU Security Portal</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f5f7fa;
-            color: #1f2937;
-        }
-
-
-
-        nav {
-            height: 75px;
-            background-color: #0b1f3a;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 7%;
-            color: white;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            font-size: 30px;
-        }
-
-        .logo h2 {
-            font-size: 20px;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #7dd3fc;
-        }
-
-        .login-btn {
-            background-color: #2563eb;
-            padding: 10px 20px;
-            border-radius: 6px;
-        }
-
-        .login-btn:hover {
-            background-color: #1d4ed8;
-        }
-
-
-
-
-        .hero {
-            min-height: 520px;
-            background: linear-gradient(
-                rgba(11, 31, 58, 0.90),
-                rgba(11, 31, 58, 0.90)
-            ),
-            
-            center/cover;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 40px 20px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero-icon {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #60a5fa;
-        }
-
-        .hero p {
-            font-size: 19px;
-            line-height: 1.7;
-            color: #dbeafe;
-            margin-bottom: 35px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .btn {
-            text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .primary-btn {
-            background-color: #2563eb;
-            color: white;
-        }
-
-        .primary-btn:hover {
-            background-color: #1d4ed8;
-        }
-
-        .secondary-btn {
-            border: 1px solid white;
-            color: white;
-        }
-
-        .secondary-btn:hover {
-            background-color: white;
-            color: #0b1f3a;
-        }
-
-
-   
-
-        .stats {
-            max-width: 1100px;
-            margin: -50px auto 70px;
-            position: relative;
-
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-
-            padding: 0 20px;
-        }
-
-        .stat-card {
-            background-color: white;
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .stat-card .icon {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .stat-card h2 {
-            color: #0b1f3a;
-            font-size: 28px;
-        }
-
-        .stat-card p {
-            color: #6b7280;
-            margin-top: 5px;
-        }
-
-
- 
-
-        .section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 70px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-            font-size: 34px;
-            color: #0b1f3a;
-            margin-bottom: 12px;
-        }
-
-        .section-title p {
-            color: #6b7280;
-        }
-
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            color: #0b1f3a;
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            color: #4b5563;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .about-box {
-            background-color: #eaf2ff;
-            padding: 45px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .about-box .big-icon {
-            font-size: 80px;
-            margin-bottom: 15px;
-        }
-
-
-
-
-        .features-section {
-            background-color: #eef3f8;
-        }
-
-        .features {
-            max-width: 1100px;
-            margin: auto;
-            padding: 70px 20px;
-
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .feature-card {
-            background-color: white;
-            padding: 30px 25px;
-            border-radius: 10px;
-            transition: 0.3s;
-            border: 1px solid #e5e7eb;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        }
-
-        .feature-icon {
-            font-size: 35px;
-            margin-bottom: 18px;
-        }
-
-        .feature-card h3 {
-            color: #0b1f3a;
-            margin-bottom: 10px;
-        }
-
-        .feature-card p {
-            color: #6b7280;
-            line-height: 1.6;
-        }
-
-
- 
-
-        .security-info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .info-card {
-            padding: 30px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            background-color: white;
-        }
-
-        .info-card h3 {
-            color: #0b1f3a;
-            margin: 15px 0 10px;
-        }
-
-        .info-card p {
-            color: #6b7280;
-            line-height: 1.6;
-        }
-
-
-
-
-        .cta {
-            background-color: #0b1f3a;
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .cta h2 {
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            color: #dbeafe;
-            margin-bottom: 30px;
-        }
-
-
-
-
-        footer {
-            background-color: #071426;
-            color: white;
-            padding: 45px 7%;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 15px;
-        }
-
-        .footer-section p {
-            color: #9ca3af;
-            line-height: 1.7;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .footer-links a {
-            color: #9ca3af;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .copyright {
-            border-top: 1px solid #1f2937;
-            margin-top: 30px;
-            padding-top: 20px;
-            text-align: center;
-            color: #6b7280;
-        }
-
-
-
-
-        @media (max-width: 900px) {
-
-            .nav-links {
-                gap: 15px;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about {
-                grid-template-columns: 1fr;
-            }
-
-            .security-info {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            nav {
-                padding: 0 20px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-                margin-top: 20px;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+    
 
-
-    <nav>
+    <header>
 
         <div class="logo">
-            <div class="logo-icon">🛡️</div>
-            <h2>SAU SECURITY PORTAL</h2>
+            <span>🛡️</span>
+            SAU SECURITY PORTAL
         </div>
 
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li>
-                <a href="#" class="login-btn">Login</a>
-            </li>
-        </ul>
+        <button class="menu-btn" onclick="toggleMenu()"></button>
 
-    </nav>
+        <nav id="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="features.html">Features</a>
+            <a href="#contact">Contact</a>
+            <a href="personnel-login.html" class="login-btn">Login</a>
+        </nav>
 
-
+    </header>
 
 
-    <section class="hero">
+    
+
+    <section class="hero" id="home">
 
         <div class="hero-content">
 
             <div class="hero-icon">🛡️</div>
 
-            <h1>
-                SAU <span>Security Portal</span>
-            </h1>
+            <h1>SAU <span>Security Portal</span></h1>
 
             <p>
                 A centralized platform for managing and monitoring
@@ -492,88 +49,15 @@
             </p>
 
             <div class="hero-buttons">
-                <a href="#" class="btn primary-btn">
-                    Access Portal
+
+                <a href="public.html" class="btn primary-btn">
+                    Public View
                 </a>
 
-                <a href="#about" class="btn secondary-btn">
-                    Learn More
+                <a href="explore.html" class="btn secondary-btn">
+                    Explore Website
                 </a>
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-
-    <section class="stats">
-
-        <div class="stat-card">
-            <div class="icon">👮</div>
-            <h2>42</h2>
-            <p>Total Staff</p>
-        </div>
-
-        <div class="stat-card">
-            <div class="icon">🟢</div>
-            <h2>36</h2>
-            <p>Currently On Duty</p>
-        </div>
-
-        <div class="stat-card">
-            <div class="icon">📍</div>
-            <h2>18</h2>
-            <p>Active Duty Posts</p>
-        </div>
-
-        <div class="stat-card">
-            <div class="icon">🕐</div>
-            <h2>3</h2>
-            <p>Security Shifts</p>
-        </div>
-
-    </section>
-
-
-
-
-    <section class="section" id="about">
-
-        <div class="about">
-
-            <div class="about-text">
-
-                <h2>About the Portal</h2>
-
-                <p>
-                    The SAU Security Portal provides a centralized
-                    system for managing security personnel and
-                    monitoring campus security operations.
-                </p>
-
-                <p>
-                    Administrators can manage staff attendance,
-                    duty assignments, shifts, locations, and
-                    important security information from one place.
-                </p>
-
-                <a href="#" class="btn primary-btn">
-                    Explore Portal
-                </a>
-
-            </div>
-
-            <div class="about-box">
-
-                <div class="big-icon">🏫</div>
-
-                <h3>Campus Security Management</h3>
-
-                <p>
-                    Organized. Transparent. Efficient.
-                </p>
+                
 
             </div>
 
@@ -582,28 +66,46 @@
     </section>
 
 
+   
+
+    <section class="about" id="about">
+
+        <h2 class="section-title">About Our Portal</h2>
+
+        <p>
+            The SAU Security Portal is designed to make campus security
+            management more organized, efficient and accessible.
+            It provides a centralized platform for security personnel
+            management, attendance tracking, duty assignments and
+            administrative operations.
+        </p>
+
+        <a href="explore.html" class="learn-more">
+            Learn More →
+        </a>
+
+    </section>
 
 
-    <section class="features-section" id="features">
+    
 
-        <div class="section-title" style="padding-top: 70px;">
+    <section class="features" id="features">
 
-            <h2>Key Features</h2>
+        <h2 class="section-title">Our Features</h2>
 
-            <p>
-                Everything needed to efficiently manage campus security staff.
-            </p>
+        <p class="section-description">
+            A centralized system designed to simplify security
+            operations and improve coordination across the university.
+        </p>
 
-        </div>
-
-        <div class="features">
+        <div class="feature-container">
 
             <div class="feature-card">
                 <div class="feature-icon">👮</div>
                 <h3>Staff Management</h3>
                 <p>
-                    View and manage security personnel information,
-                    profiles, and availability.
+                    Manage security personnel profiles and
+                    their professional information.
                 </p>
             </div>
 
@@ -611,8 +113,8 @@
                 <div class="feature-icon">📋</div>
                 <h3>Attendance Tracking</h3>
                 <p>
-                    Monitor daily attendance, check-in,
-                    check-out, absence, and leave status.
+                    Maintain and monitor daily attendance
+                    records of security personnel.
                 </p>
             </div>
 
@@ -620,80 +122,36 @@
                 <div class="feature-icon">📍</div>
                 <h3>Duty Assignments</h3>
                 <p>
-                    Track guards assigned to different
-                    buildings, floors, and departments.
+                    Organize duty locations, buildings,
+                    floors and security shifts.
                 </p>
             </div>
 
             <div class="feature-card">
-                <div class="feature-icon">🕐</div>
-                <h3>Shift Management</h3>
+                <div class="feature-icon">📅</div>
+                <h3>Schedule Management</h3>
                 <p>
-                    Organize morning, evening, and night
-                    security shifts across campus.
+                    Manage weekly and monthly duty schedules
+                    for security personnel.
                 </p>
             </div>
 
-        </div>
-
-    </section>
-
-
-
-
-    <section class="section">
-
-        <div class="section-title">
-
-            <h2>Security Information</h2>
-
-            <p>
-                Quick access to important campus security information.
-            </p>
-
-        </div>
-
-        <div class="security-info">
-
-            <div class="info-card">
-
-                <div class="feature-icon">🚨</div>
-
-                <h3>Emergency Contacts</h3>
-
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Leave Management</h3>
                 <p>
-                    Quickly access important security and
-                    emergency contact information.
+                    Submit, review and manage leave
+                    applications.
                 </p>
-
             </div>
 
-
-            <div class="info-card">
-
+            <div class="feature-card">
                 <div class="feature-icon">📢</div>
-
-                <h3>Security Alerts</h3>
-
+                <h3>Notices</h3>
                 <p>
-                    Stay updated with important security
-                    notices and campus alerts.
+                    Share important announcements and
+                    instructions with security personnel.
                 </p>
-
-            </div>
-
-
-            <div class="info-card">
-
-                <div class="feature-icon">📍</div>
-
-                <h3>Campus Locations</h3>
-
-                <p>
-                    View security coverage across different
-                    buildings and areas of the campus.
-                </p>
-
             </div>
 
         </div>
@@ -701,63 +159,112 @@
     </section>
 
 
+   
 
-    <section class="cta">
+    <section class="access" id="access">
 
-        <h2>Manage Campus Security Efficiently</h2>
+        <h2 class="section-title">Portal Access</h2>
 
-        <p>
-            Monitor staff, attendance, assignments, and security
-            operations from one centralized portal.
+        <p class="section-description">
+            Choose the appropriate section to access the portal.
         </p>
 
-        <a href="#" class="btn primary-btn">
-            Go to Dashboard →
-        </a>
+        <div class="access-container">
+
+            <div class="access-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Public Access</h3>
+                <p>
+                    View the published security duty board
+                    and campus duty information.
+                </p>
+                <a href="public.html" class="btn">Public View</a>
+            </div>
+
+            <div class="access-card">
+                <div class="feature-icon">👮</div>
+                <h3>Personnel Access</h3>
+                <p>
+                    Security personnel can access their
+                    attendance, schedules and duty details.
+                </p>
+                <a href="personnel-login.html" class="btn">
+                    Personnel Login
+                </a>
+            </div>
+
+            <div class="access-card">
+                <div class="feature-icon">🔐</div>
+                <h3>Admin Access</h3>
+                <p>
+                    Authorized administrators can manage
+                    staff, attendance and duty operations.
+                </p>
+                <a href="admin-login.html" class="btn">
+                    Admin Login
+                </a>
+            </div>
+
+            <div class="access-card">
+                <div class="feature-icon">📊</div>
+                <h3>Explore Portal</h3>
+                <p>
+                    Learn about the portal, its objectives,
+                    features and working process.
+                </p>
+                <a href="explore.html" class="btn">
+                    Explore Website
+                </a>
+            </div>
+
+        </div>
 
     </section>
 
 
+    
 
-    <footer id="contact">
+    <section class="contact" id="contact">
 
-        <div class="footer-content">
+        <h2 class="section-title">Contact Us</h2>
 
-            <div class="footer-section">
+        <p>SAU Security Portal</p>
+        <p>South Asian University</p>
 
-                <h3>🛡️ SAU SECURITY PORTAL</h3>
+        <p>
+            For security-related assistance, please contact
+            the university security administration.
+        </p>
 
-                <p>
-                    Security Staff Management System<br>
-                    South Asian University
-                </p>
-
-            </div>
+    </section>
 
 
-            <div class="footer-section">
+    
 
-                <h3>Quick Links</h3>
+    <footer>
 
-                <div class="footer-links">
+        <h3>🛡️ SAU SECURITY PORTAL</h3>
 
-                    <a href="#">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#features">Features</a>
+        <p>Centralized Campus Security Management System</p>
 
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="copyright">
-
-            copyright 2026 SAU Security Portal. All Rights Reserved.
-
-        </div>
+        <p>© 2026 SAU Security Portal. All Rights Reserved.</p>
 
     </footer>
+
+
+    
+
+    <script>
+
+        function toggleMenu() {
+
+            let menu = document.getElementById("navbar");
+
+            menu.classList.toggle("active");
+
+        }
+
+    </script>
 
 </body>
 </html>
