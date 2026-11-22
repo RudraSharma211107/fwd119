@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | SAU Security Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="personnel-page">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">🛡️ SAU SECURITY PORTAL</div>
+
+        <div class="header-right">
+            <span class="personnel-label">Security Personnel</span>
+            <a href="index.html" class="logout-btn">Logout</a>
+        </div>
+
+    </header>
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <h2>Personnel Menu</h2>
+
+            <a href="personnel-dashboard.html">Dashboard</a>
+            <a href="personnel-profile.html" class="active">My Profile</a>
+            <a href="personnel-attendance.html">My Attendance</a>
+            <a href="personnel-duties.html">My Duties</a>
+            <a href="personnel-schedule.html">My Schedule</a>
+            <a href="personnel-leaves.html">Apply for Leave</a>
+            <a href="personnel-notices.html">Notices</a>
+            <a href="public.html">Campus Information</a>
+
+            <a href="index.html" class="logout">Logout</a>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <section class="page-heading">
+
+                <h1>My Profile</h1>
+
+                <p>
+                    View your personal information and employment details.
+                </p>
+
+            </section>
+
+            <!-- PROFILE CARD -->
+
+            <section class="personnel-profile-card">
+
+                <div class="personnel-profile-header">
+
+                    <div class="personnel-avatar">👮</div>
+
+                    <div>
+                        <h2 id="profileName">Loading...</h2>
+                        <p>Security Personnel</p>
+                    </div>
+
+                </div>
+
+                <div class="profile-information">
+
+                    <div class="profile-detail">
+                        <span>Personnel ID</span>
+                        <h3 id="profileId">--</h3>
+                    </div>
+
+                    <div class="profile-detail">
+                        <span>Full Name</span>
+                        <h3 id="profileFullName">--</h3>
+                    </div>
+
+                    <div class="profile-detail">
+                        <span>Phone Number</span>
+                        <h3 id="profilePhone">--</h3>
+                    </div>
+
+                    <div class="profile-detail">
+                        <span>Email Address</span>
+                        <h3 id="profileEmail">--</h3>
+                    </div>
+
+                    <div class="profile-detail">
+                        <span>Assigned Shift</span>
+                        <h3 id="profileShift">--</h3>
+                    </div>
+
+                    <div class="profile-detail">
+                        <span>Current Status</span>
+                        <h3 id="profileStatus">--</h3>
+                    </div>
+
+                </div>
+
+                <p id="profileMessage" class="profile-message"></p>
+
+            </section>
+
+            <!-- INFORMATION -->
+
+            <section class="information-box">
+
+                <h3>Profile Information</h3>
+
+                <p>
+                    Your profile information is maintained by the
+                    Security Administrator. If any details are incorrect,
+                    please contact the administration office.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

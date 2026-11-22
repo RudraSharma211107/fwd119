@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Leave | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="personnel-page">
+
+    <header class="header">
+        <div class="logo">🛡️ SAU SECURITY PORTAL</div>
+
+        <div class="header-right">
+            <span class="personnel-label">Security Personnel</span>
+            <a href="index.html" class="logout-btn">Logout</a>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <h2>Personnel Menu</h2>
+
+            <a href="personnel-dashboard.html">Dashboard</a>
+            <a href="personnel-profile.html">My Profile</a>
+            <a href="personnel-attendance.html">My Attendance</a>
+            <a href="personnel-duties.html">My Duties</a>
+            <a href="personnel-schedule.html">My Schedule</a>
+            <a href="personnel-leaves.html" class="active">Apply for Leave</a>
+            <a href="personnel-notices.html">Notices</a>
+            <a href="public.html">Campus Information</a>
+
+            <a href="index.html" class="logout">Logout</a>
+        </aside>
+
+        <main class="main-content">
+
+            <section class="page-heading">
+                <h1>Leave Management</h1>
+                <p>Submit leave requests and track their approval status.</p>
+            </section>
+
+            <!-- LEAVE SUMMARY -->
+
+            <section class="overview">
+
+                <div class="summary-card">
+                    <h2 id="personnelTotalLeaves">0</h2>
+                    <p>Total Requests</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="personnelPendingLeaves">0</h2>
+                    <p>Pending Requests</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="personnelApprovedLeaves">0</h2>
+                    <p>Approved Requests</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="personnelRejectedLeaves">0</h2>
+                    <p>Rejected Requests</p>
+                </div>
+
+            </section>
+
+            <!-- APPLY FOR LEAVE -->
+
+            <section class="personnel-leave-card">
+
+                <h2>Submit a Leave Request</h2>
+
+                <form id="personnelLeaveForm">
+
+                    <div class="personnel-leave-grid">
+
+                        <div class="form-group">
+                            <label for="personnelLeaveStart">Start Date</label>
+                            <input
+                                type="date"
+                                id="personnelLeaveStart"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="personnelLeaveEnd">End Date</label>
+                            <input
+                                type="date"
+                                id="personnelLeaveEnd"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="personnelLeaveReason">Reason for Leave</label>
+                            <textarea
+                                id="personnelLeaveReason"
+                                rows="4"
+                                placeholder="Enter your reason for requesting leave..."
+                                required
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Submit Leave Request
+                    </button>
+
+                    <p id="personnelLeaveMessage" class="leave-message"></p>
+
+                </form>
+
+            </section>
+
+            <!-- LEAVE HISTORY -->
+
+            <section class="personnel-leave-card">
+
+                <h2>My Leave History</h2>
+
+                <div class="personnel-leave-table-container">
+
+                    <table class="personnel-leave-table">
+
+                        <thead>
+                            <tr>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Reason</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="personnelLeaveTable">
+
+                            <tr>
+                                <td colspan="4">Loading leave requests...</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <section class="information-box">
+                <h3>Leave Policy Information</h3>
+                <p>
+                    Submitting a leave request does not mean that leave
+                    has been approved. Please wait for the Security
+                    Administrator to review your application before
+                    making leave arrangements.
+                </p>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duty Assignments | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>🛡️ SAU SECURITY</h2>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="staff.html">Security Staff</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="assignments.html" class="active">Duty Assignments</a>
+        <a href="schedule.html">Schedules</a>
+        <a href="leaves.html">Leave Requests</a>
+        <a href="notices.html">Notices</a>
+        <a href="reports.html">Reports</a>
+        <a href="admin-profile.html">Admin Profile</a>
+        <a href="index.html" class="logout">Logout</a>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <button class="menu-btn" id="menuBtn" type="button">☰</button>
+            <h2>Duty Assignments</h2>
+        </header>
+
+        <section class="page-heading">
+            <h1>Manage Duty Assignments</h1>
+            <p>Assign security personnel to campus locations.</p>
+        </section>
+
+        <section class="form-section">
+
+            <h2>Create Assignment</h2>
+
+            <form id="assignmentForm">
+
+                <input type="hidden" id="assignmentEditId">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="assignmentStaffId">Staff ID</label>
+                        <input type="text" id="assignmentStaffId" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignmentName">Staff Name</label>
+                        <input type="text" id="assignmentName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignmentLocation">Duty Location</label>
+                        <select id="assignmentLocation" required>
+                            <option value="">Select Location</option>
+                            <option value="Academic Block">Academic Block</option>
+                            <option value="Administrative Block">Administrative Block</option>
+                            <option value="Main Entrance">Main Entrance</option>
+                            <option value="Residential Area">Residential Area</option>
+                            <option value="Library">Library</option>
+                            <option value="Common Area">Common Area</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignmentShift">Shift</label>
+                        <select id="assignmentShift" required>
+                            <option value="">Select Shift</option>
+                            <option value="Morning">Morning</option>
+                            <option value="Evening">Evening</option>
+                            <option value="Night">Night</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignmentDate">Duty Date</label>
+                        <input type="date" id="assignmentDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignmentStatus">Status</label>
+                        <select id="assignmentStatus" required>
+                            <option value="Assigned">Assigned</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn" id="assignmentSubmitBtn">
+                        Assign Duty
+                    </button>
+                    <button type="reset" class="secondary-btn">
+                        Clear Form
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <section class="assignment-section">
+
+            <div class="section-heading">
+                <h2>Assignment Records</h2>
+            </div>
+
+            <div class="filters">
+
+                <input type="text" id="assignmentSearch"
+                    placeholder="Search staff or location...">
+
+                <select id="assignmentStatusFilter">
+                    <option value="all">All Assignments</option>
+                    <option value="Assigned">Assigned</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+
+            </div>
+
+            <div class="table-container">
+                <table id="assignmentTable">
+                    <thead>
+                        <tr>
+                            <th>Staff ID</th>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Shift</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="assignmentTableBody">
+                        <!-- Assignment records will appear here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="assignmentEmptyMessage" class="empty-message">
+                No assignments available.
+            </p>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

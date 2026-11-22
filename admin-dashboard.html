@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <h2>🛡️ SAU SECURITY</h2>
+
+            <a href="admin-dashboard.html" class="active">Dashboard</a>
+            <a href="staff.html">Security Staff</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignments.html">Duty Assignments</a>
+            <a href="schedule.html">Schedules</a>
+            <a href="leaves.html">Leave Requests</a>
+            <a href="notices.html">Notices</a>
+            <a href="reports.html">Reports</a>
+            <a href="admin-profile.html">Admin Profile</a>
+            <a href="index.html" class="logout">Logout</a>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <button class="menu-btn" id="menuBtn" type="button">☰</button>
+                <h2>Administrator Dashboard</h2>
+                <a href="admin-profile.html">Admin Profile</a>
+            </header>
+
+            <section class="page-heading">
+                <h1>Welcome, Administrator</h1>
+                <p>Overview of campus security operations.</p>
+                <p>Date: <span class="current-date"></span></p>
+            </section>
+
+            <section class="summary-cards">
+
+                <div class="summary-card">
+                    <h2>42</h2>
+                    <p>Total Security Staff</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2>36</h2>
+                    <p>Currently on Duty</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2>4</h2>
+                    <p>Absent Staff</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2>18</h2>
+                    <p>Active Duty Posts</p>
+                </div>
+
+            </section>
+
+            <section class="form-section">
+                <h2>Quick Access</h2>
+
+                <div class="feature-container">
+
+                    <div class="feature-card">
+                        <h3>Security Staff</h3>
+                        <p>View and manage personnel records.</p>
+                        <a href="staff.html" class="btn">Open</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Attendance</h3>
+                        <p>Check daily attendance records.</p>
+                        <a href="attendance.html" class="btn">Open</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Duty Assignments</h3>
+                        <p>Manage staff duty locations.</p>
+                        <a href="assignments.html" class="btn">Open</a>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Other Management Modules</h2>
+                <p>
+                    Manage schedules, leave requests, notices and reports
+                    using the navigation menu.
+                </p>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

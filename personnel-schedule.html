@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Schedule | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="personnel-page">
+
+    <header class="header">
+        <div class="logo">🛡️ SAU SECURITY PORTAL</div>
+
+        <div class="header-right">
+            <span class="personnel-label">Security Personnel</span>
+            <a href="index.html" class="logout-btn">Logout</a>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <h2>Personnel Menu</h2>
+
+            <a href="personnel-dashboard.html">Dashboard</a>
+            <a href="personnel-profile.html">My Profile</a>
+            <a href="personnel-attendance.html">My Attendance</a>
+            <a href="personnel-duties.html">My Duties</a>
+            <a href="personnel-schedule.html" class="active">My Schedule</a>
+            <a href="personnel-leaves.html">Apply for Leave</a>
+            <a href="personnel-notices.html">Notices</a>
+            <a href="public.html">Campus Information</a>
+
+            <a href="index.html" class="logout">Logout</a>
+        </aside>
+
+        <main class="main-content">
+
+            <section class="page-heading">
+                <h1>My Duty Schedule</h1>
+                <p>View your assigned shifts and working hours.</p>
+            </section>
+
+            <!-- SUMMARY -->
+
+            <section class="overview">
+
+                <div class="summary-card">
+                    <h2 id="myScheduleTotal">0</h2>
+                    <p>Total Shifts</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="myUpcomingShifts">0</h2>
+                    <p>Upcoming Shifts</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="myMorningShifts">0</h2>
+                    <p>Morning Shifts</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="myEveningShifts">0</h2>
+                    <p>Evening Shifts</p>
+                </div>
+
+            </section>
+
+            <!-- SCHEDULE TABLE -->
+
+            <section class="personnel-schedule-section">
+
+                <div class="schedule-heading">
+                    <h2>My Shift Details</h2>
+                    <p>Your schedule as assigned by the administrator.</p>
+                </div>
+
+                <div class="schedule-filters">
+
+                    <input
+                        type="date"
+                        id="personnelScheduleDate"
+                        aria-label="Filter by date"
+                    >
+
+                    <select id="personnelScheduleShift">
+                        <option value="">All Shifts</option>
+                        <option value="Morning">Morning</option>
+                        <option value="Evening">Evening</option>
+                        <option value="Night">Night</option>
+                    </select>
+
+                    <button type="button" class="btn" id="clearScheduleFilters">
+                        Clear Filters
+                    </button>
+
+                </div>
+
+                <div class="schedule-table-container">
+
+                    <table class="personnel-schedule-table">
+
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Shift</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="personnelScheduleTable">
+
+                            <tr>
+                                <td colspan="4">Loading schedule...</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p id="personnelScheduleMessage" class="schedule-message"></p>
+
+            </section>
+
+            <section class="information-box">
+
+                <h3>Schedule Instructions</h3>
+
+                <p>
+                    Please report to your assigned duty location before
+                    the scheduled starting time. For any changes or
+                    corrections, contact your Security Administrator.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

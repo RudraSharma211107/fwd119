@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedules | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>🛡️ SAU SECURITY</h2>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="staff.html">Security Staff</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="assignments.html">Duty Assignments</a>
+        <a href="schedule.html" class="active">Schedules</a>
+        <a href="leaves.html">Leave Requests</a>
+        <a href="notices.html">Notices</a>
+        <a href="reports.html">Reports</a>
+        <a href="admin-profile.html">Admin Profile</a>
+        <a href="index.html" class="logout">Logout</a>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <button class="menu-btn" id="menuBtn" type="button">☰</button>
+            <h2>Schedule Management</h2>
+        </header>
+
+        <section class="page-heading">
+            <h1>Duty Schedules</h1>
+            <p>Organize security personnel shifts and timings.</p>
+        </section>
+
+        <section class="form-section">
+
+            <h2>Create Duty Schedule</h2>
+
+            <form id="scheduleForm">
+
+                <input type="hidden" id="scheduleEditId">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="scheduleStaffId">Staff ID</label>
+                        <input type="text" id="scheduleStaffId" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scheduleName">Staff Name</label>
+                        <input type="text" id="scheduleName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scheduleDate">Duty Date</label>
+                        <input type="date" id="scheduleDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scheduleShift">Shift</label>
+                        <select id="scheduleShift" required>
+                            <option value="">Select Shift</option>
+                            <option value="Morning">Morning</option>
+                            <option value="Evening">Evening</option>
+                            <option value="Night">Night</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scheduleStart">Start Time</label>
+                        <input type="time" id="scheduleStart" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scheduleEnd">End Time</label>
+                        <input type="time" id="scheduleEnd" required>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn" id="scheduleSubmitBtn">
+                    Save Schedule
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="staff-section">
+
+            <h2>Schedule Records</h2>
+
+            <div class="filters">
+                <input type="date" id="scheduleDateFilter">
+                <input type="text" id="scheduleSearch"
+                    placeholder="Search by staff ID or name...">
+            </div>
+
+            <div class="table-container">
+                <table id="scheduleTable">
+                    <thead>
+                        <tr>
+                            <th>Staff ID</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Shift</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="scheduleTableBody">
+                        <!-- Schedule records will appear here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="scheduleEmptyMessage" class="empty-message">
+                No schedules available.
+            </p>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

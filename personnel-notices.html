@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="personnel-page">
+
+    <header class="header">
+        <div class="logo">🛡️ SAU SECURITY PORTAL</div>
+
+        <div class="header-right">
+            <span class="personnel-label">Security Personnel</span>
+            <a href="index.html" class="logout-btn">Logout</a>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <h2>Personnel Menu</h2>
+
+            <a href="personnel-dashboard.html">Dashboard</a>
+            <a href="personnel-profile.html">My Profile</a>
+            <a href="personnel-attendance.html">My Attendance</a>
+            <a href="personnel-duties.html">My Duties</a>
+            <a href="personnel-schedule.html">My Schedule</a>
+            <a href="personnel-leaves.html">Apply for Leave</a>
+            <a href="personnel-notices.html" class="active">Notices</a>
+            <a href="public.html">Campus Information</a>
+
+            <a href="index.html" class="logout">Logout</a>
+        </aside>
+
+        <main class="main-content">
+
+            <section class="page-heading">
+                <h1>Security Notices</h1>
+                <p>Read the latest announcements and important updates.</p>
+            </section>
+
+            <!-- NOTICE SUMMARY -->
+
+            <section class="overview">
+
+                <div class="summary-card">
+                    <h2 id="personnelNoticeCount">0</h2>
+                    <p>Total Notices</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="personnelLatestNotice">--</h2>
+                    <p>Latest Notice Date</p>
+                </div>
+
+            </section>
+
+            <!-- NOTICE SEARCH -->
+
+            <section class="personnel-notices-section">
+
+                <div class="personnel-notices-heading">
+                    <h2>All Announcements</h2>
+                    <p>Updates published by the Security Administrator.</p>
+                </div>
+
+                <input
+                    type="text"
+                    id="personnelNoticeSearch"
+                    class="personnel-notice-search"
+                    placeholder="Search notices by title or category..."
+                >
+
+                <div id="personnelNoticeContainer"
+                     class="personnel-notice-container">
+
+                    <p>Loading notices...</p>
+
+                </div>
+
+                <p id="personnelNoticeMessage"></p>
+
+            </section>
+
+            <section class="information-box">
+                <h3>Important Information</h3>
+                <p>
+                    Please check this section regularly for security
+                    instructions, campus updates and important
+                    announcements from the administration.
+                </p>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Attendance | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="personnel-page">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">🛡️ SAU SECURITY PORTAL</div>
+
+        <div class="header-right">
+            <span class="personnel-label">Security Personnel</span>
+            <a href="index.html" class="logout-btn">Logout</a>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Personnel Menu</h2>
+
+            <a href="personnel-dashboard.html">Dashboard</a>
+            <a href="personnel-profile.html">My Profile</a>
+            <a href="personnel-attendance.html" class="active">My Attendance</a>
+            <a href="personnel-duties.html">My Duties</a>
+            <a href="personnel-schedule.html">My Schedule</a>
+            <a href="personnel-leaves.html">Apply for Leave</a>
+            <a href="personnel-notices.html">Notices</a>
+            <a href="public.html">Campus Information</a>
+
+            <a href="index.html" class="logout">Logout</a>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <section class="page-heading">
+                <h1>My Attendance</h1>
+                <p>View your attendance history and daily attendance status.</p>
+            </section>
+
+            <!-- ATTENDANCE SUMMARY -->
+            <section class="overview">
+
+                <div class="summary-card">
+                    <h2 id="myTotalAttendance">0</h2>
+                    <p>Total Records</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="myPresentCount">0</h2>
+                    <p>Present Days</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="myAbsentCount">0</h2>
+                    <p>Absent Days</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="myOtherCount">0</h2>
+                    <p>Other Status</p>
+                </div>
+
+            </section>
+
+            <!-- ATTENDANCE RECORDS -->
+            <section class="attendance-section">
+
+                <div class="attendance-heading">
+                    <h2>Attendance History</h2>
+                    <p>Your attendance records maintained by the administrator.</p>
+                </div>
+
+                <!-- FILTERS -->
+                <div class="attendance-filters">
+
+                    <input
+                        type="date"
+                        id="myAttendanceDate"
+                        aria-label="Filter attendance by date"
+                    >
+
+                    <select id="myAttendanceStatus">
+                        <option value="">All Statuses</option>
+                        <option value="Present">Present</option>
+                        <option value="Absent">Absent</option>
+                        <option value="Late">Late</option>
+                        <option value="On Leave">On Leave</option>
+                    </select>
+
+                    <button type="button" class="btn" id="clearAttendanceFilters">
+                        Clear Filters
+                    </button>
+
+                </div>
+
+                <!-- TABLE -->
+                <div class="attendance-table-container">
+
+                    <table class="attendance-table">
+
+                        <thead>
+                            <tr>
+                                <th>Personnel ID</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Attendance Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="myAttendanceTable">
+
+                            <tr>
+                                <td colspan="4">Loading attendance records...</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p id="myAttendanceMessage" class="attendance-message"></p>
+
+            </section>
+
+            <!-- INFORMATION -->
+            <section class="information-box">
+
+                <h3>Attendance Information</h3>
+
+                <p>
+                    Attendance records are maintained by the Security
+                    Administrator. If you notice an incorrect attendance
+                    entry, contact the administration office.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

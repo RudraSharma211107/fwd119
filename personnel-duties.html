@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Duties | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="personnel-page">
+
+    <header class="header">
+        <div class="logo">🛡️ SAU SECURITY PORTAL</div>
+
+        <div class="header-right">
+            <span class="personnel-label">Security Personnel</span>
+            <a href="index.html" class="logout-btn">Logout</a>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <h2>Personnel Menu</h2>
+
+            <a href="personnel-dashboard.html">Dashboard</a>
+            <a href="personnel-profile.html">My Profile</a>
+            <a href="personnel-attendance.html">My Attendance</a>
+            <a href="personnel-duties.html" class="active">My Duties</a>
+            <a href="personnel-schedule.html">My Schedule</a>
+            <a href="personnel-leaves.html">Apply for Leave</a>
+            <a href="personnel-notices.html">Notices</a>
+            <a href="public.html">Campus Information</a>
+
+            <a href="index.html" class="logout">Logout</a>
+        </aside>
+
+        <main class="main-content">
+
+            <section class="page-heading">
+                <h1>My Duties</h1>
+                <p>View your assigned campus locations and duty responsibilities.</p>
+            </section>
+
+            <!-- SUMMARY -->
+
+            <section class="overview">
+
+                <div class="summary-card">
+                    <h2 id="myTotalDuties">0</h2>
+                    <p>Total Assignments</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="myActiveDuties">0</h2>
+                    <p>Active Duties</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="myCompletedDuties">0</h2>
+                    <p>Completed Duties</p>
+                </div>
+
+                <div class="summary-card">
+                    <h2 id="myDutyLocations">0</h2>
+                    <p>Assigned Locations</p>
+                </div>
+
+            </section>
+
+            <!-- FILTERS AND ASSIGNMENTS -->
+
+            <section class="duties-section">
+
+                <div class="duties-heading">
+                    <h2>Duty Assignments</h2>
+                    <p>All assignments allocated to your personnel ID.</p>
+                </div>
+
+                <div class="duties-filters">
+
+                    <input
+                        type="date"
+                        id="myDutyDate"
+                        aria-label="Filter by duty date"
+                    >
+
+                    <select id="myDutyStatus">
+                        <option value="">All Duty Statuses</option>
+                        <option value="Assigned">Assigned</option>
+                        <option value="Active">Active</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+
+                    <button type="button" class="btn" id="clearDutyFilters">
+                        Clear Filters
+                    </button>
+
+                </div>
+
+                <div class="duties-table-container">
+
+                    <table class="duties-table">
+
+                        <thead>
+                            <tr>
+                                <th>Duty Location</th>
+                                <th>Shift</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="myDutiesTable">
+
+                            <tr>
+                                <td colspan="4">Loading assignments...</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p id="myDutiesMessage" class="duties-message"></p>
+
+            </section>
+
+            <section class="information-box">
+
+                <h3>Duty Instructions</h3>
+
+                <p>
+                    Please report to your assigned duty location on time.
+                    Follow the instructions provided by your supervisor.
+                    For any changes in duty allocation, contact the
+                    Security Administrator.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

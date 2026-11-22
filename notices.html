@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>🛡️ SAU SECURITY</h2>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="staff.html">Security Staff</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="assignments.html">Duty Assignments</a>
+        <a href="schedule.html">Schedules</a>
+        <a href="leaves.html">Leave Requests</a>
+        <a href="notices.html" class="active">Notices</a>
+        <a href="reports.html">Reports</a>
+        <a href="admin-profile.html">Admin Profile</a>
+        <a href="index.html" class="logout">Logout</a>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <button class="menu-btn" id="menuBtn" type="button">☰</button>
+            <h2>Notices & Announcements</h2>
+        </header>
+
+        <section class="page-heading">
+            <h1>Manage Notices</h1>
+            <p>Create and publish security-related announcements.</p>
+        </section>
+
+        <section class="form-section">
+
+            <h2>Create New Notice</h2>
+
+            <form id="noticeForm">
+
+                <input type="hidden" id="noticeEditId">
+
+                <div class="form-group">
+                    <label for="noticeTitle">Notice Title</label>
+                    <input type="text" id="noticeTitle" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="noticeCategory">Category</label>
+                    <select id="noticeCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="General">General</option>
+                        <option value="Duty Update">Duty Update</option>
+                        <option value="Important">Important</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="noticeDate">Publication Date</label>
+                    <input type="date" id="noticeDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="noticeDescription">Notice Description</label>
+                    <textarea id="noticeDescription" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn" id="noticeSubmitBtn">
+                    Publish Notice
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="staff-section">
+
+            <h2>Published Notices</h2>
+
+            <div class="filters">
+                <input type="text" id="noticeSearch"
+                    placeholder="Search notices...">
+            </div>
+
+            <div id="noticeContainer">
+                <!-- Notice cards will appear here -->
+            </div>
+
+            <p id="noticeEmptyMessage" class="empty-message">
+                No notices published.
+            </p>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

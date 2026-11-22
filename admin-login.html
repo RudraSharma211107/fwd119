@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+
+    <header class="navbar">
+        <div class="logo">🛡️ SAU SECURITY PORTAL</div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="public.html">Public View</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-btn" type="button" aria-label="Open menu">☰</button>
+    </header>
+
+    <main>
+
+        <section class="login-section">
+
+            <div class="login-info">
+                <div class="shield">🛡️</div>
+
+                <h1>Administrator Portal</h1>
+
+                <p>
+                    Authorized administrators can access the central
+                    security management dashboard.
+                </p>
+
+                <div class="info-points">
+                    <p>✓ Manage security personnel</p>
+                    <p>✓ Monitor attendance records</p>
+                    <p>✓ Manage duty assignments</p>
+                    <p>✓ View security reports</p>
+                </div>
+            </div>
+
+            <div class="login-card">
+
+                <div class="card-icon">🔐</div>
+
+                <h2>Administrator Login</h2>
+
+                <p class="card-description">
+                    Sign in using your administrator credentials.
+                </p>
+
+                <form id="adminLoginForm">
+
+                    <div class="form-group">
+                        <label for="adminId">Administrator ID</label>
+                        <input
+                            type="text"
+                            id="adminId"
+                            name="adminId"
+                            placeholder="Enter Administrator ID"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminPassword">Password</label>
+
+                        <div class="password-box">
+                            <input
+                                type="password"
+                                id="adminPassword"
+                                name="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button type="button" class="show-password">
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember">
+                            <input type="checkbox" name="remember">
+                            Remember me
+                        </label>
+
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="login-btn">
+                        Login
+                    </button>
+
+                    <p id="adminLoginMessage" class="message"></p>
+
+                </form>
+
+                <div class="login-footer">
+                    <p>Security Personnel?
+                        <a href="personnel-login.html">Personnel Login</a>
+                    </p>
+
+                    <p><a href="index.html">Back to Home</a></p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="copyright">
+        <p>&copy; <span class="current-year">2026</span> SAU Security Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>🛡️ SAU SECURITY</h2>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="staff.html">Security Staff</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="assignments.html">Duty Assignments</a>
+        <a href="schedule.html">Schedules</a>
+        <a href="leaves.html">Leave Requests</a>
+        <a href="notices.html">Notices</a>
+        <a href="reports.html" class="active">Reports</a>
+        <a href="admin-profile.html">Admin Profile</a>
+        <a href="index.html" class="logout">Logout</a>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <button class="menu-btn" id="menuBtn" type="button">☰</button>
+            <h2>Reports & Statistics</h2>
+        </header>
+
+        <section class="page-heading">
+            <h1>Security Reports</h1>
+            <p>Overview of campus security management records.</p>
+        </section>
+
+        <section class="summary-cards">
+
+            <div class="summary-card">
+                <h2 id="reportTotalStaff">0</h2>
+                <p>Total Staff Records</p>
+            </div>
+
+            <div class="summary-card">
+                <h2 id="reportPresent">0</h2>
+                <p>Present Today</p>
+            </div>
+
+            <div class="summary-card">
+                <h2 id="reportAbsent">0</h2>
+                <p>Absent Today</p>
+            </div>
+
+            <div class="summary-card">
+                <h2 id="reportAssignments">0</h2>
+                <p>Total Assignments</p>
+            </div>
+
+        </section>
+
+        <section class="form-section">
+
+            <h2>Generate Report</h2>
+
+            <p>
+                Select a report category to view the corresponding
+                management records.
+            </p>
+
+            <div class="filters">
+
+                <select id="reportType">
+                    <option value="staff">Staff Report</option>
+                    <option value="attendance">Attendance Report</option>
+                    <option value="assignments">Duty Assignment Report</option>
+                </select>
+
+                <input type="date" id="reportDate">
+
+                <button type="button" class="btn" id="generateReportBtn">
+                    Generate Report
+                </button>
+
+                <button type="button" class="secondary-btn" id="printReportBtn">
+                    Print Report
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="staff-section">
+
+            <h2>Report Results</h2>
+
+            <div class="table-container">
+                <table id="reportTable">
+                    <thead id="reportTableHead">
+                        <tr>
+                            <th>Information</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="reportTableBody">
+                        <tr>
+                            <td>Select a report category to get started.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

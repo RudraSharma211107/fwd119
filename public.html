@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public View | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="public-page">
+
+    <header class="navbar">
+        <div class="logo">🛡️ SAU SECURITY PORTAL</div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="public.html">Public View</a></li>
+                <li><a href="personnel-login.html" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-btn" type="button" aria-label="Open menu">☰</button>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <h1>Campus Security Information</h1>
+            <p>General security information for the SAU campus.</p>
+        </section>
+
+        <section class="overview">
+
+            <h2 class="section-title">Security Overview</h2>
+
+            <p class="section-description">
+                This section provides general information about
+                campus security operations.
+            </p>
+
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <div class="stat-icon">👮</div>
+                    <h2>42</h2>
+                    <p>Total Security Personnel</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🟢</div>
+                    <h2>36</h2>
+                    <p>Personnel on Duty</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📍</div>
+                    <h2>18</h2>
+                    <p>Active Duty Posts</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="duty-section">
+
+            <h2 class="section-title">Campus Security Locations</h2>
+
+            <p class="section-description">
+                View general security coverage information for campus areas.
+            </p>
+
+            <div class="search-container">
+                <input
+                    type="text"
+                    id="buildingSearch"
+                    placeholder="Search campus location..."
+                    aria-label="Search campus location"
+                >
+
+                <select id="buildingFilter" aria-label="Filter campus location">
+                    <option value="all">All Locations</option>
+                    <option value="academic">Academic Buildings</option>
+                    <option value="residential">Residential Areas</option>
+                    <option value="common">Common Areas</option>
+                </select>
+            </div>
+
+            <div class="building-container" id="buildingContainer">
+
+                <div class="building-card" data-category="academic">
+                    <div class="building-header">
+                        <h3>Academic Block</h3>
+                        <span class="status covered">Covered</span>
+                    </div>
+                    <p class="building-details">
+                        General security coverage for the academic area.
+                    </p>
+                </div>
+
+                <div class="building-card" data-category="residential">
+                    <div class="building-header">
+                        <h3>Residential Area</h3>
+                        <span class="status covered">Covered</span>
+                    </div>
+                    <p class="building-details">
+                        General security coverage for residential facilities.
+                    </p>
+                </div>
+
+                <div class="building-card" data-category="common">
+                    <div class="building-header">
+                        <h3>Main Entrance</h3>
+                        <span class="status covered">Covered</span>
+                    </div>
+                    <p class="building-details">
+                        General security coverage near the main entrance.
+                    </p>
+                </div>
+
+                <div class="building-card" data-category="common">
+                    <div class="building-header">
+                        <h3>Common Areas</h3>
+                        <span class="status covered">Covered</span>
+                    </div>
+                    <p class="building-details">
+                        General security coverage in shared campus spaces.
+                    </p>
+                </div>
+
+            </div>
+
+            <p id="noBuildings" class="no-results" hidden>
+                No matching locations found.
+            </p>
+
+        </section>
+
+        <section class="contact-section">
+            <h2 class="section-title">Security Information</h2>
+            <p>
+                For assistance, contact the authorized university
+                security administration.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="copyright">
+        <p>&copy; <span class="current-year">2026</span> SAU Security Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

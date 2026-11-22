@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile | SAU Security Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page profile-page">
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>🛡️ SAU SECURITY</h2>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="staff.html">Security Staff</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="assignments.html">Duty Assignments</a>
+        <a href="schedule.html">Schedules</a>
+        <a href="leaves.html">Leave Requests</a>
+        <a href="notices.html">Notices</a>
+        <a href="reports.html">Reports</a>
+        <a href="admin-profile.html" class="active">Admin Profile</a>
+        <a href="index.html" class="logout">Logout</a>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <button class="menu-btn" id="menuBtn" type="button">☰</button>
+            <h2>Administrator Profile</h2>
+        </header>
+
+        <section class="profile-section">
+
+            <div class="profile-heading">
+
+                <div class="avatar">A</div>
+
+                <div>
+                    <h1 id="profileDisplayName">Administrator</h1>
+                    <p>Security Portal Administrator</p>
+                </div>
+
+            </div>
+
+            <div class="profile-card">
+
+                <h2>Personal Information</h2>
+
+                <form id="profileForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="adminProfileId">Admin ID</label>
+                            <input
+                                type="text"
+                                id="adminProfileId"
+                                name="adminId"
+                                value="ADMIN001"
+                                disabled
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="adminProfileName">Full Name</label>
+                            <input
+                                type="text"
+                                id="adminProfileName"
+                                name="fullName"
+                                placeholder="Enter full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="adminProfileEmail">Email</label>
+                            <input
+                                type="email"
+                                id="adminProfileEmail"
+                                name="email"
+                                placeholder="Enter email address"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="adminProfilePhone">Phone Number</label>
+                            <input
+                                type="tel"
+                                id="adminProfilePhone"
+                                name="phone"
+                                placeholder="Enter phone number"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="adminDesignation">Designation</label>
+                            <input
+                                type="text"
+                                id="adminDesignation"
+                                value="Security Administrator"
+                                disabled
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="adminDepartment">Department</label>
+                            <input
+                                type="text"
+                                id="adminDepartment"
+                                value="Campus Security"
+                                disabled
+                            >
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Save Changes
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="profile-card">
+
+                <h2>Change Password</h2>
+
+                <form id="passwordForm">
+
+                    <div class="form-group">
+                        <label for="oldPassword">Current Password</label>
+                        <input
+                            type="password"
+                            id="oldPassword"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input
+                            type="password"
+                            id="newPassword"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm New Password</label>
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Update Password
+                    </button>
+
+                    <p id="passwordMessage" class="message"></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
